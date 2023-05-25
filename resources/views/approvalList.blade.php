@@ -1,11 +1,14 @@
 @extends('layouts.app')
    
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
+<div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid"></div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <!-- card-header -->
+            <div class="card"> 
                 <div class="card-body table-responsive p-0">
                     <table class="table table-striped text-center table-hover">
                         <thead>
@@ -40,9 +43,7 @@
                         </tbody>
                     </table>
                 </div>
-                </div>
             </div>
-        </div>
+        </section>
     </div>
-</div>
 @endsection
