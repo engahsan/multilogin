@@ -24,3 +24,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('status');
 Route::get('/approval-list', [HomeController::class, 'approvalList'])->name('approvalList');
+Route::get('user-status/{id}/{status}', [HomeController::class, 'changeStatus']);

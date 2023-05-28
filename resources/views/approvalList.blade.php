@@ -15,6 +15,7 @@
                             <tr>
                                 <th style="width:5%">ID</th>
                                 <th>Name</th>
+                                <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -24,20 +25,28 @@
                                     <tr>
                                         <td>{{ $list->id }}</td>
                                         <td>{{ $list->name }}</td>
+                                        <td>{{ $list->email }}</td>
                                         <td>
-                                            <!-- <a href="" class="btn btn-xs bg-gradient-primary" title="Edit"><i class="fas fa-edit"></i></a> -->
+                                            <!-- <a href="" class="btn btn-xs bg-gradient-primary" title="Edit"><i class="fas fa-edit"></i></a>
                                             <a href="{{ URL('/admin/catalogue/product-status/' . $list->id . '/' . '1') }}" id="{{ $list->id }}" class="btn btn-xs bg-gradient-primary" style="display: none"> Approve </a>
                                             <button type="button" class="btn btn-xs bg-gradient-danger" onclick="return (confirm('Are you sure?'))?document.getElementById('{{$list->id}}').submit():false" title="Delete"><i class="fas fa-trash"></i></button>
                                             <form id="{{$list->id}}" action="" method="POST" style="display: none;">
                                                 @csrf
                                                 @method('DELETE')
-                                            </form>
+                                            </form> -->
+                                            
+                                                <a class="btn btn bg-gradient-danger" href="{{ Url('/user-status/' . $list->id . '/' . '0') }}" id="{{ $list->id }}" >Dicline</a>
+                                                
+                                
+                                                <a class="btn btn bg-gradient-success" href="{{ Url('/user-status/' . $list->id . '/' . '1') }}" id="{{ $list->id }}" >Approve</a>
+                                                
+                                            
                                         </td>
                                     </tr>
                                 @endforeach
                             @else
                             <tr>
-                                <td colspan="9">@lang('cmn.empty_table')</td>
+                                <td colspan="9">Table is empty</td>
                             </tr>
                             @endif
                         </tbody>
